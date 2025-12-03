@@ -1,0 +1,1519 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مادة الأحياء أول ثانوي - الفصل الدراسي الأول</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.6s ease;
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #764ba2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: #555;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: #f0e6ff;
+            color: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            padding: 80px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: #f0e6ff;
+            margin: 0 0 40px 0;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 25px 35px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #f0e6ff;
+        }
+
+        /* Main Content */
+        .main-content {
+            width: 100%;
+            padding: 60px 30px;
+        }
+
+        .content-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 15px 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #f0e6ff;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Cards */
+        .info-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.8s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .info-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+
+        .card-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .card-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .card-list li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            color: #555;
+        }
+
+        .card-list li::before {
+            content: "✦";
+            position: absolute;
+            right: 0;
+            color: #667eea;
+            font-size: 18px;
+        }
+
+        /* Question Box */
+        .question-card {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .question-title {
+            font-weight: bold;
+            font-size: 19px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .answer {
+            font-size: 16px;
+            line-height: 1.9;
+            padding-right: 30px;
+        }
+
+        /* Species Grid */
+        .species-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .species-card {
+            background: #ffffff;
+            border: 3px solid #667eea;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .species-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border-color: #764ba2;
+        }
+
+        .species-icon {
+            font-size: 52px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .species-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
+
+        .species-details {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.9;
+            text-align: right;
+        }
+
+        /* Accordion */
+        .accordion {
+            background: #ffffff;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .accordion-header {
+            padding: 25px 30px;
+            background: linear-gradient(135deg, #f8f5ff 0%, #ffffff 100%);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: linear-gradient(135deg, #f0e6ff 0%, #f8f5ff 100%);
+        }
+
+        .accordion-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #764ba2;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .accordion-icon {
+            font-size: 28px;
+        }
+
+        .accordion-arrow {
+            font-size: 24px;
+            color: #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion.active .accordion-body {
+            max-height: 10000px;
+        }
+
+        .accordion-content {
+            padding: 30px;
+            background: #ffffff;
+        }
+
+        /* Divider */
+        .lesson-divider {
+            text-align: center;
+            margin: 80px 0;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .divider-line {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffffff 20%, #ffffff 80%, transparent);
+            margin: 20px 0;
+        }
+
+        .divider-title {
+            color: #ffffff;
+            font-size: 38px;
+            font-weight: bold;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 60px 30px;
+            margin-top: 80px;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-title {
+            color: #ffffff;
+            font-size: 28px;
+            margin: 0 0 20px 0;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #f0e6ff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            color: #f0e6ff;
+            font-size: 16px;
+            margin: 20px 0 0 0;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                justify-content: center;
+            }
+
+            .divider-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Navigation Bar -->
+  <nav class="navbar">
+   <div class="nav-content">
+    <div class="logo"><span>🧬</span> <span id="siteTitle">أحياء أول ثانوي</span>
+    </div>
+    <div class="nav-links"><a href="#lesson1" class="nav-link">الديدان المفلطحة</a> <a href="#lesson2" class="nav-link">الديدان الإسطوانية</a> <a href="#lesson3" class="nav-link">الرخويات</a> <a href="#lesson4" class="nav-link">الديدان الحلقية</a>
+    </div>
+   </div>
+  </nav><!-- Hero Section -->
+  <section class="hero">
+   <div class="hero-content">
+    <h1 class="hero-title" id="mainTitle">مادة الأحياء أول ثانوي الفصل الدراسي الأول</h1>
+    <p class="hero-subtitle" id="mainSubtitle">الفصل السابع: الديدان والرخويات</p>
+    <div class="hero-stats">
+     <div class="stat-box">
+      <div class="stat-number">
+       4
+      </div>
+      <div class="stat-label">
+       دروس تعليمية
+      </div>
+     </div>
+     <div class="stat-box">
+      <div class="stat-number">
+       30+
+      </div>
+      <div class="stat-label">
+       موضوع رئيسي
+      </div>
+     </div>
+     <div class="stat-box">
+      <div class="stat-number">
+       150+
+      </div>
+      <div class="stat-label">
+       معلومة علمية
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Main Content -->
+  <main class="main-content">
+   <div class="content-wrapper"><!-- Lesson 1: الديدان المفلطحة -->
+    <section id="lesson1">
+     <div class="section-header">
+      <h2 class="section-title">🔬 الدرس الأول: الديدان المفلطحة</h2>
+      <p class="section-subtitle">تعرف على خصائص وتركيب الديدان المفلطحة</p>
+     </div>
+     <div class="card-grid"><!-- تركيب الجسم -->
+      <div class="info-card">
+       <div class="card-icon">
+        🔬
+       </div>
+       <h3 class="card-title">تركيب جسم الديدان المفلطحة</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li><strong>عديمة التجويف الجسمي</strong></li>
+         <li><strong>التناظر جانبي</strong></li>
+         <li><strong>تعيش:</strong></li>
+         <li style="padding-right: 50px;">1- متطفلة</li>
+         <li style="padding-right: 50px;">2- حرة (في الماء العذب أو المالح أو البيئة الرطبة)</li>
+        </ul>
+        <div class="question-card">
+         <div class="question-title">
+          ❓ س/ ما أهمية التناظر الجانبي؟
+         </div>
+         <div class="answer"><strong>الإجابة:</strong><br>
+           1) مرحلة أساسية في تكوين أعضاء مختلفة<br>
+           2) الحيوانات ذات تناظر جانبي أكثر قدرة على الحركة من الحيوانات ذات التناظر الشعاعي
+         </div>
+        </div>
+       </div>
+      </div><!-- التغذية -->
+      <div class="info-card">
+       <div class="card-icon">
+        🍽️
+       </div>
+       <h3 class="card-title">التغذي والهضم</h3>
+       <div class="card-content">
+        <p><strong>أولاً / الديدان الحرة:</strong></p>
+        <ul class="card-list">
+         <li>تتغذى على المخلوقات الميتة أو البطيئة الحركة</li>
+         <li>تستخدم <strong>البلعوم</strong> وهو عضو عضلي يمتد خارج فمها</li>
+         <li>يفرز أنزيمات تهضم الفريسة التي يلتقطها</li>
+         <li>يمرر الطعام إلى القناة الهضمية لإستكمال الهضم</li>
+         <li>ليس لها فتحة إخراج فتتخلص من الفضلات عن طريق الفم</li>
+        </ul>
+        <p style="margin-top: 20px;"><strong>ثانياً / التغذية في الديدان الطفيلية:</strong></p>
+        <ul class="card-list">
+         <li>لها تراكيب معقدة (الممصات والخطافات)</li>
+         <li>التي تمكنها من الالتصاق بالعائل</li>
+        </ul>
+        <div class="question-card" style="margin-top: 20px;">
+         <div class="question-title">
+          ❓ س/ عللي لا تحتاج الديدان المفلطحة الطفيلية إلى جهاز هضمي؟
+         </div>
+         <div class="answer"><strong>الإجابة:</strong> لأنها تحصل على الغذاء من دم العائل وأنسجته
+         </div>
+        </div>
+       </div>
+      </div><!-- التنفس والدوران -->
+      <div class="info-card">
+       <div class="card-icon">
+        💨
+       </div>
+       <h3 class="card-title">التنفس والدوران</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>لا تملك أعضاء متخصصة لنقل الغازات وتبادلها</li>
+         <li>ينتقل الأكسجين المذاب إلى الخلايا بعملية <strong>الانتشار</strong></li>
+         <li>تتخلص من ثاني أكسيد الكربون وفضلات أخرى بعملية <strong>الانتشار</strong></li>
+        </ul>
+       </div>
+      </div><!-- الإخراج -->
+      <div class="info-card">
+       <div class="card-icon">
+        🔥
+       </div>
+       <h3 class="card-title">الإخراج - الخلايا اللهبية</h3>
+       <div class="card-content">
+        <p><strong>الخلايا اللهبية</strong> وحدات أساسية متصلة بشبكة من القنوات الدقيقة المنتشرة عبر الجسم</p>
+        <div class="question-card" style="margin: 20px 0;">
+         <div class="question-title">
+          ❓ س/ عللي تسمية بالخلايا اللهبية بهذا الإسم؟
+         </div>
+         <div class="answer"><strong>الإجابة:</strong> لأنه تحيط بها أهداب تتحرك كاللهب توجه الماء والفضلات إلى أنابيب إخراجية ثم تطرحها خارج جسمها عبر ثقوب إخراجية موجودة على جانبي الجسم
+         </div>
+        </div>
+        <div class="question-card">
+         <div class="question-title">
+          ❓ س/ ما أهمية جهاز الإخراج (الخلايا اللهبية)؟
+         </div>
+         <div class="answer"><strong>الإجابة:</strong> تحافظ على الاتزان الداخلي
+         </div>
+        </div>
+       </div>
+      </div><!-- الاستجابة -->
+      <div class="info-card">
+       <div class="card-icon">
+        🧠
+       </div>
+       <h3 class="card-title">الاستجابة للمثيرات</h3>
+       <div class="card-content">
+        <p><strong>الجهاز العصبي:</strong> ينظم استجابة أجسامها للمؤثرات البيئية</p>
+        <ul class="card-list">
+         <li>يتكون من <strong>حبلين عصبيين طوليين</strong></li>
+         <li>متصلين بأنسجة عصبية مستعرضة على طول الجسم</li>
+         <li>تشبه في ذلك <strong>درجات السلم</strong></li>
+         <li>عقد عصبية في مقدمة الجسم ترسل إشارات</li>
+        </ul>
+       </div>
+      </div><!-- الحركة -->
+      <div class="info-card">
+       <div class="card-icon">
+        🏃
+       </div>
+       <h3 class="card-title">الحركة</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>بانقباض العضلات</li>
+         <li>الانزلاق بواسطة الأهداب</li>
+         <li>تفرز مخاطاً للانزلاق السلس</li>
+        </ul>
+       </div>
+      </div>
+     </div><!-- تنوع الديدان المفلطحة -->
+     <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+       <div class="accordion-title"><span class="accordion-icon">🔍</span> <span>تنوع الديدان المفلطحة - ثلاث طوائف</span>
+       </div><span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+       <div class="accordion-content">
+        <div class="species-grid">
+         <div class="species-card">
+          <div class="species-icon">
+           1️⃣
+          </div>
+          <div class="species-name">
+           التربلاريا
+          </div>
+          <div class="species-details"><strong>البيئة:</strong> حرة في المياه العذبة والمالحة<br><br><strong>الحواس:</strong><br>
+            • خلايا حسية كيميائية<br>
+            • زوائد على الرأس<br>
+            • بقعة عينية للضوء
+          </div>
+         </div>
+         <div class="species-card">
+          <div class="species-icon">
+           2️⃣
+          </div>
+          <div class="species-name">
+           الديدان المثقبة
+          </div>
+          <div class="species-details"><strong>البيئة:</strong> متطفلة<br><br><strong>مثال: البلهارسيا</strong><br>
+            • تحتاج لعائلين<br>
+            • تسد الأوعية الدموية<br>
+            • تسبب انتفاخ الأنسجة<br><br><strong>الوقاية:</strong> معالجة مياه الصرف
+          </div>
+         </div>
+         <div class="species-card">
+          <div class="species-icon">
+           3️⃣
+          </div>
+          <div class="species-name">
+           الديدان الشريطية
+          </div>
+          <div class="species-details"><strong>الموطن:</strong> أمعاء العائل<br><br><strong>التركيب:</strong><br>
+            • رأس بممصات وخطافات<br>
+            • قطع تحوي أعضاء تكاثرية<br><br><strong>الانتشار:</strong> الدول النامية
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Lesson Divider -->
+    <div class="lesson-divider">
+     <div class="divider-line"></div>
+     <h2 class="divider-title">🔬 الدرس الثاني: الديدان الإسطوانية والدوارات</h2>
+     <div class="divider-line"></div>
+    </div><!-- Lesson 2: الديدان الإسطوانية -->
+    <section id="lesson2">
+     <div class="section-header">
+      <h2 class="section-title">الديدان الإسطوانية</h2>
+      <p class="section-subtitle">خصائصها وأنواعها المختلفة</p>
+     </div>
+     <div class="card-grid">
+      <div class="info-card">
+       <div class="card-icon">
+        🔬
+       </div>
+       <h3 class="card-title">تركيب الجسم</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>أسطوانية الشكل</li>
+         <li>تجويف جسمي كاذب</li>
+         <li>تناظر جانبي</li>
+         <li>مدببة من الطرفين</li>
+         <li>تعيش حرة أو متطفلة</li>
+        </ul>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        🍽️
+       </div>
+       <h3 class="card-title">التغذية والهضم</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>جهاز هضمي أنبوبي كامل</li>
+         <li>يبدأ بالفم</li>
+         <li>ينتهي بفتحة الشرج</li>
+         <li>تتغذى على اللافقاريات الصغيرة</li>
+        </ul>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        🏃
+       </div>
+       <h3 class="card-title">الحركة</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>عضلات على طول الجسم</li>
+         <li>التجويف الكاذب كهيكل مائي</li>
+         <li>حركة تشبه الخيط المتلوي</li>
+        </ul>
+       </div>
+      </div>
+     </div><!-- أنواع الديدان الإسطوانية -->
+     <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+       <div class="accordion-title"><span class="accordion-icon">🦠</span> <span>أنواع الديدان الإسطوانية الخطيرة</span>
+       </div><span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+       <div class="accordion-content">
+        <div class="species-grid">
+         <div class="species-card">
+          <div class="species-icon">
+           🪱
+          </div>
+          <div class="species-name">
+           الديدان الشعرية
+          </div>
+          <div class="species-details"><strong>المرض:</strong> داء التريخينيا<br><br><strong>الإصابة:</strong> لحم الخنزير غير المطبوخ<br><br><strong>الوقاية:</strong> طهي اللحوم جيداً
+          </div>
+         </div>
+         <div class="species-card">
+          <div class="species-icon">
+           🦶
+          </div>
+          <div class="species-name">
+           الديدان الخطافية
+          </div>
+          <div class="species-details"><strong>الانتشار:</strong> المناطق الحارة<br><br><strong>الإصابة:</strong> المشي حافياً<br><br><strong>الوقاية:</strong> انتعال الأحذية
+          </div>
+         </div>
+         <div class="species-card">
+          <div class="species-icon">
+           🪱
+          </div>
+          <div class="species-name">
+           ديدان الإسكارس
+          </div>
+          <div class="species-details"><strong>الانتشار:</strong> الأكثر إصابة للإنسان<br><br><strong>الإصابة:</strong> الخضار غير المغسولة<br><br><strong>الوقاية:</strong> غسل الخضروات جيداً
+          </div>
+         </div>
+         <div class="species-card">
+          <div class="species-icon">
+           👶
+          </div>
+          <div class="species-name">
+           الديدان الدبوسية
+          </div>
+          <div class="species-details"><strong>الفئة:</strong> تصيب الأطفال غالباً<br><br><strong>الموطن:</strong> الأمعاء<br><br><strong>الانتشار:</strong> عبر الأيدي الملوثة
+          </div>
+         </div>
+         <div class="species-card">
+          <div class="species-icon">
+           🦟
+          </div>
+          <div class="species-name">
+           ديدان الفيلاريا
+          </div>
+          <div class="species-details"><strong>المرض:</strong> مرض الفيل<br><br><strong>الناقل:</strong> البعوض<br><br><strong>المكافحة:</strong> القضاء على البعوض
+          </div>
+         </div>
+         <div class="species-card">
+          <div class="species-icon">
+           🌀
+          </div>
+          <div class="species-name">
+           الدوارات
+          </div>
+          <div class="species-details"><strong>البيئة:</strong> المياه العذبة<br><br><strong>الحركة:</strong> بالأهداب<br><br><strong>التغذية:</strong> الطلائعيات
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Lesson Divider -->
+    <div class="lesson-divider">
+     <div class="divider-line"></div>
+     <h2 class="divider-title">🐚 الدرس الثالث: الرخويات</h2>
+     <div class="divider-line"></div>
+    </div><!-- Lesson 3: الرخويات -->
+    <section id="lesson3">
+     <div class="section-header">
+      <h2 class="section-title">الرخويات</h2>
+      <p class="section-subtitle">أكثر من 110,000 نوع من الرخويات</p>
+     </div>
+     <div class="card-grid">
+      <div class="info-card">
+       <div class="card-icon">
+        🐚
+       </div>
+       <h3 class="card-title">تركيب الجسم</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>حقيقية التجويف الجسمي</li>
+         <li>متناظرة جانبياً</li>
+         <li>جسم داخلي طري</li>
+         <li>لها قدم عضلية</li>
+         <li>لها عباءة تفرز الصدفة</li>
+        </ul>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        🍽️
+       </div>
+       <h3 class="card-title">التغذية - الطاحنة</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>تشبه اللسان بصفوف أسنان</li>
+         <li>تكشط الطحالب عن الصخور</li>
+         <li>تثقب صدفة الفرائس</li>
+         <li>المحار يعتمد على الترشيح</li>
+        </ul>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        💨
+       </div>
+       <h3 class="card-title">التنفس - الخياشيم</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>تراكيب خيطية كالأهداب</li>
+         <li>غنية بالدم</li>
+         <li>تزيد مساحة التبادل الغازي</li>
+         <li>بعضها يرشح الغذاء</li>
+        </ul>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        ❤️
+       </div>
+       <h3 class="card-title">الدوران</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>قلب بحجرات</li>
+         <li>جهاز مفتوح (المحار)</li>
+         <li>جهاز مغلق (الحبار)</li>
+         <li>كفاءة حسب السرعة</li>
+        </ul>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        👁️
+       </div>
+       <h3 class="card-title">الاستجابة</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>جهاز عصبي متطور</li>
+         <li>الأخطبوط له دماغ</li>
+         <li>عيون تشبه عيني الإنسان</li>
+         <li>حواس متقدمة</li>
+        </ul>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        🏃
+       </div>
+       <h3 class="card-title">الحركة</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>الزحف بالقدم (الحلازين)</li>
+         <li>القدم العضلية (المحار)</li>
+         <li>الدفع النفاث (الحبار)</li>
+        </ul>
+       </div>
+      </div>
+     </div><!-- أنواع الرخويات -->
+     <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+       <div class="accordion-title"><span class="accordion-icon">🦑</span> <span>تنوع الرخويات - ثلاث طوائف رئيسية</span>
+       </div><span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+       <div class="accordion-content">
+        <div class="species-grid">
+         <div class="species-card">
+          <div class="species-icon">
+           🐌
+          </div>
+          <div class="species-name">
+           بطنية القدم
+          </div>
+          <div class="species-details"><strong>الحجم:</strong> أكبر الطوائف<br><br><strong>الصدفة:</strong> صدفة واحدة<br><br><strong>البيئة:</strong> المياه العذبة والمالحة واليابسة<br><br><strong>أمثلة:</strong> الحلازين، البزاق، الحزون
+          </div>
+         </div>
+         <div class="species-card">
+          <div class="species-icon">
+           🦪
+          </div>
+          <div class="species-name">
+           ذات المصراعين
+          </div>
+          <div class="species-details"><strong>الصدفة:</strong> صدفتان<br><br><strong>الحركة:</strong> بطيئة<br><br><strong>البيئة:</strong> المياه المالحة والعذبة<br><br><strong>أمثلة:</strong> المحار، بلح البحر
+          </div>
+         </div>
+         <div class="species-card">
+          <div class="species-icon">
+           🦑
+          </div>
+          <div class="species-name">
+           رأسية القدم
+          </div>
+          <div class="species-details"><strong>الحركة:</strong> سريعة جداً<br><br><strong>الدفع:</strong> النفاث عبر السيفون<br><br><strong>الذكاء:</strong> من أذكى اللافقاريات<br><br><strong>أمثلة:</strong> الحبار، الأخطبوط، النوتي
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Lesson Divider -->
+    <div class="lesson-divider">
+     <div class="divider-line"></div>
+     <h2 class="divider-title">🪱 الدرس الرابع: الديدان الحلقية</h2>
+     <div class="divider-line"></div>
+    </div><!-- Lesson 4: الديدان الحلقية -->
+    <section id="lesson4">
+     <div class="section-header">
+      <h2 class="section-title">الديدان الحلقية</h2>
+      <p class="section-subtitle">أكثر من 11,000 نوع من الديدان الحلقية</p>
+     </div>
+     <div class="card-grid">
+      <div class="info-card">
+       <div class="card-icon">
+        🔬
+       </div>
+       <h3 class="card-title">تركيب الجسم</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li><strong>العدد:</strong> تضم أكثر من 11,000 نوع</li>
+         <li><strong>البيئة:</strong> قد تجد الديدان الحلقية في التربة وفي كل مكان إلا المناطق القطبية ورمال الصحراء</li>
+         <li><strong>الشكل:</strong> جسم اسطواني مقسم إلى حلقات (خاصية التجزؤ)</li>
+         <li><strong>المظهر:</strong> تشبه من الخارج القطع النقدية المتراصة</li>
+         <li>يفصل هذه الحلقات بعضها عن بعض جدار من الأنسجة</li>
+         <li>تحوى كل حلقة تراكيب للهضم والإخراج والحركة</li>
+         <li>قد تتخصص بعض الحلقات لوظيفة معينة كالإحساس أو التكاثر</li>
+         <li><strong>الدعامة:</strong> السائل داخل التجويف الجسمي يعمل كجهاز دعامي مائي</li>
+        </ul>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        🍽️
+       </div>
+       <h3 class="card-title">التغذي والهضم</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>لها أنبوب داخل جسمها يبدأ بفتحة الفم وينتهي بفتحة الشرج</li>
+         <li>يبدو كأنه أنبوب داخل أنبوب آخر</li>
+         <li>تستطيع الديدان الحلقية الطفيلية الاحتفاظ بالطعام عدة أشهر</li>
+        </ul>
+        <div style="margin-top: 20px; padding: 15px; background: #f8f5ff; border-radius: 10px; border-right: 4px solid #667eea;"><strong style="color: #764ba2;">مسار الطعام:</strong><br>
+          الفم ← البلعوم ← <strong>الحوصلة</strong> (التخزين) ← <strong>القانصة</strong> (الطحن) ← الأمعاء (الامتصاص) ← فتحة الشرج
+        </div>
+        <div class="question-card" style="margin-top: 20px;">
+         <div class="question-title">
+          ❓ س/ ما هي القانصة؟
+         </div>
+         <div class="answer"><strong>الإجابة:</strong> الكيس العضلي الذي يحتوي على أجزاء صلبة تساعد على عملية طحن الغذاء مع التربة
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        ❤️
+       </div>
+       <h3 class="card-title">جهاز الدوران</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>تمتلك جهاز دوران <strong>مغلق</strong></li>
+         <li>ينقل الأكسجين والغذاء عبر أوعية دموية</li>
+         <li>تتخلص من الفضلات وثاني أكسيد الكربون عن طريق الدم</li>
+         <li>الأوعية الدموية العضلية في منطقة الرأس تعمل عمل القلب</li>
+         <li>الدم يتجه إلى مقدمة الدودة عبر الأوعية الظهرية</li>
+         <li>يتجه إلى الجزء الخلفي عبر الأوعية البطنية</li>
+        </ul>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        💨
+       </div>
+       <h3 class="card-title">التنفس</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>تأخذ الأكسجين من التربة</li>
+         <li>تتخلص من ثاني أكسيد الكربون عبر جلدها الرطب</li>
+         <li>بعض الديدان الحلقية المائية لها <strong>خياشيم</strong> لتبادل الغازات في الماء</li>
+        </ul>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        🔥
+       </div>
+       <h3 class="card-title">الإخراج - النفريديا</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>للديدان الحلقية زوج من <strong>النفريديا</strong> في كل حلقة</li>
+         <li>تجمع الفضلات داخل النفريديا</li>
+         <li>تنقل في أنابيب عبر تجويف الجسم إلى خارج</li>
+        </ul>
+        <div class="question-card" style="margin-top: 20px;">
+         <div class="question-title">
+          ❓ س/ ما أهمية النفريديا؟
+         </div>
+         <div class="answer"><strong>الإجابة:</strong><br>
+           1) التخلص من الفضلات<br>
+           2) المحافظة على الاتزان الداخلي للسوائل في جسم الدودة
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        🧠
+       </div>
+       <h3 class="card-title">الاستجابة للمثيرات</h3>
+       <div class="card-content">
+        <ul class="card-list">
+         <li>تختص الحلقات الأمامية بالإحساس بالبيئة</li>
+         <li>يتكون الدماغ والحبال العصبية من عقد عصبية</li>
+         <li>تمكن الدودة من الإحساس بالضوء والاهتزازات</li>
+        </ul>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        🏃
+       </div>
+       <h3 class="card-title">الحركة</h3>
+       <div class="card-content">
+        <p><strong>آلية الحركة:</strong></p>
+        <ul class="card-list">
+         <li>تنقبض العضلات الدائرية حول كل حلقة</li>
+         <li>يؤدي ذلك إلى ضغط الحلقة ودفع السائل</li>
+         <li>تصبح الحلقة أطول</li>
+         <li>تنقبض العضلات الطولية فتقصر الحلقة</li>
+         <li>تدفع بجزئها الآخر إلى الأمام</li>
+        </ul>
+        <div style="margin-top: 15px; padding: 15px; background: #fff3cd; border-radius: 10px; border-right: 4px solid #ffc107;"><strong style="color: #856404;">🔸 الأهلاب:</strong><br>
+          أشواك صغيرة تنغرس في التربة تعمل على تثبيت الدودة ومساعدتها على الحركة
+        </div>
+       </div>
+      </div>
+      <div class="info-card">
+       <div class="card-icon">
+        🔄
+       </div>
+       <h3 class="card-title">التكاثر</h3>
+       <div class="card-content">
+        <p><strong>أنواع التكاثر:</strong></p>
+        <ul class="card-list">
+         <li>تتكاثر جنسياً ولا جنسياً</li>
+         <li>معظمها منفصلة الجنس</li>
+         <li>ديدان الأرض وديدان العلق <strong>خنثى</strong></li>
+        </ul>
+        <div style="margin-top: 15px; padding: 15px; background: #d1ecf1; border-radius: 10px; border-right: 4px solid #17a2b8;"><strong style="color: #0c5460;">التكاثر الجنسي:</strong><br>
+          تتبادل الدودتان الحيوانات المنوية والبيوض في منطقة <strong>السرج</strong><br><br><strong>السرج:</strong> عدة حلقات منتفخة تنتج الشرنقة التي تفقس منها صغار دودة الأرض
+        </div>
+        <div style="margin-top: 15px; padding: 15px; background: #f8d7da; border-radius: 10px; border-right: 4px solid #dc3545;"><strong style="color: #721c24;">التكاثر اللاجنسي:</strong><br>
+          إذا انفصل جزء من الدودة جدد هذا الجزء نفسه ليصبح دودة
+        </div>
+       </div>
+      </div>
+     </div><!-- جدول المقارنة -->
+     <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+       <div class="accordion-title"><span class="accordion-icon">📊</span> <span>جدول مقارنة: الديدان الحلقية × الإسطوانية × المفلطحة</span>
+       </div><span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+       <div class="accordion-content">
+        <div style="overflow-x: auto;">
+         <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <thead>
+           <tr style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+            <th style="padding: 15px; border: 1px solid #ddd; font-size: 16px;">وجه المقارنة</th>
+            <th style="padding: 15px; border: 1px solid #ddd; font-size: 16px;">الديدان المفلطحة</th>
+            <th style="padding: 15px; border: 1px solid #ddd; font-size: 16px;">الديدان الإسطوانية</th>
+            <th style="padding: 15px; border: 1px solid #ddd; font-size: 16px;">الديدان الحلقية</th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr style="background: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #764ba2;">تجويف الجسم</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">عديمة التجويف الجسمي</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">تجويف جسمي كاذب</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">حقيقية التجويف الجسمي</td>
+           </tr>
+           <tr>
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #764ba2;">التناظر</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">جانبي</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">جانبي</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">جانبي</td>
+           </tr>
+           <tr style="background: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #764ba2;">تقسيم الجسم</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">غير مقسم</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">غير مقسم</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">مقسم إلى حلقات (التجزؤ)</td>
+           </tr>
+           <tr>
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #764ba2;">الجهاز الهضمي</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">جهاز هضمي بفتحة واحدة (الفم)</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">جهاز هضمي أنبوبي كامل (فم وشرج)</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">جهاز هضمي أنبوبي كامل (فم وشرج)</td>
+           </tr>
+           <tr style="background: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #764ba2;">الحركة</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">انقباض العضلات والانزلاق بالأهداب</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">عضلات طولية + هيكل مائي</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">عضلات دائرية وطولية + أهلاب</td>
+           </tr>
+           <tr>
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #764ba2;">جهاز الدوران</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">لا يوجد</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">لا يوجد</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">جهاز دوران مغلق</td>
+           </tr>
+           <tr style="background: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #764ba2;">التنفس</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">الانتشار عبر الجلد</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">الانتشار عبر الجلد</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">عبر الجلد الرطب أو الخياشيم</td>
+           </tr>
+           <tr>
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #764ba2;">الإخراج</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">الخلايا اللهبية</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">قناة إخراجية</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">النفريديا</td>
+           </tr>
+           <tr style="background: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #764ba2;">الاستجابة</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">حبلان عصبيان + عقد عصبية</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">حبل عصبي + عقد عصبية</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">دماغ + حبال عصبية + عقد</td>
+           </tr>
+           <tr>
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #764ba2;">التكاثر</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">جنسي ولا جنسي</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">جنسي</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">جنسي ولا جنسي</td>
+           </tr>
+           <tr style="background: #f8f9fa;">
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #764ba2;">الجنس</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">خنثى أو منفصلة الجنس</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">منفصلة الجنس</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">معظمها منفصلة (البعض خنثى)</td>
+           </tr>
+           <tr>
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #764ba2;">الأمثلة</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">التربلاريا، البلهارسيا، الدودة الشريطية</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">الإسكارس، الدودة الخطافية، الدبوسية</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">دودة الأرض، دودة العلق، الدودة المروحية</td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+      </div>
+     </div><!-- تنوع الديدان الحلقية -->
+     <div class="accordion" style="margin-top: 30px;">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+       <div class="accordion-title"><span class="accordion-icon">🔍</span> <span>تنوع الديدان الحلقية - ثلاث طوائف</span>
+       </div><span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+       <div class="accordion-content">
+        <div class="species-grid">
+         <div class="species-card">
+          <div class="species-icon">
+           🪱
+          </div>
+          <div class="species-name">
+           1- طائفة القليلة الأشواك
+          </div>
+          <div class="species-details"><strong>الأمثلة:</strong> دودة الأرض وأشباهها<br><br><strong>الخصائص:</strong><br>
+            • أكثر الديدان المألوفة للناس<br>
+            • تستطيع التهام ما يعادل وزنها يومياً<br>
+            • تحصل على المواد المغذية من التربة<br><br><strong style="color: #28a745;">✓ الفائدة:</strong> تهوية التربة
+          </div>
+         </div>
+         <div class="species-card">
+          <div class="species-icon">
+           🌊
+          </div>
+          <div class="species-name">
+           2- طائفة العديدة الأشواك
+          </div>
+          <div class="species-details"><strong>البيئة:</strong> الديدان البحرية<br><br><strong>الأمثلة:</strong><br>
+            • الدودة المروحية<br>
+            • الدودة الشوكية<br><br><strong>الخصائص:</strong><br>
+            • لها منطقة رأس<br>
+            • تحتوي على أعضاء حس<br>
+            • لها عيون
+          </div>
+         </div>
+         <div class="species-card">
+          <div class="species-icon">
+           🩸
+          </div>
+          <div class="species-name">
+           3- طائفة الهيرودينا
+          </div>
+          <div class="species-details"><strong>النوع:</strong> ديدان العلق الطفيلية<br><br><strong>الشكل:</strong> جسم مسطح بدون أشواك أو أهلاب<br><br><strong>البيئة:</strong> معظمها في المياه العذبة<br><br><strong>الالتصاق:</strong> ممصات أمامية وخلفية<br><br><strong>العوائل:</strong> الأسماك، الزواحف، الإنسان
+          </div>
+         </div>
+        </div>
+        <div class="question-card" style="margin-top: 30px;">
+         <div class="question-title">
+          ❓ س/ على ماذا يحتوي لعاب العلق الطبي؟
+         </div>
+         <div class="answer"><strong>الإجابة:</strong><br>
+           1) مواد كيميائية تعمل مخدراً<br>
+           2) مواد تخفف من انتفاخ الجسم<br>
+           3) مواد تمنع تجلط الدم
+         </div>
+        </div>
+        <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%); border-radius: 15px; text-align: center;">
+         <h4 style="color: #155724; font-size: 22px; margin: 0 0 15px 0;">🌱 أهمية الديدان الحلقية</h4>
+         <p style="color: #155724; font-size: 17px; line-height: 1.8; margin: 0;">تؤدي دوراً مهماً في الأنظمة البيئية<br>
+           إذ تفيد النباتات والحيوانات والإنسان</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+  </main><!-- Footer -->
+  <footer class="footer">
+   <div class="footer-content">
+    <h3 class="footer-title">مادة الأحياء أول ثانوي</h3>
+    <div class="footer-links"><a href="#lesson1" class="footer-link">الديدان المفلطحة</a> <a href="#lesson2" class="footer-link">الديدان الإسطوانية</a> <a href="#lesson3" class="footer-link">الرخويات</a> <a href="#lesson4" class="footer-link">الديدان الحلقية</a>
+    </div>
+    <p class="copyright">© 2025 - جميع الحقوق محفوظة</p>
+   </div>
+  </footer><!-- Scroll to Top Button -->
+  <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+   ↑
+  </div>
+  <script>
+        const defaultConfig = {
+            site_title: "أحياء أول ثانوي",
+            main_title: "مادة الأحياء أول ثانوي الفصل الدراسي الأول",
+            main_subtitle: "الفصل السابع: الديدان والرخويات",
+            background_color: "#667eea",
+            secondary_color: "#764ba2",
+            card_color: "#ffffff",
+            text_color: "#555555",
+            accent_color: "#f0e6ff"
+        };
+
+        function toggleAccordion(header) {
+            const accordion = header.parentElement;
+            accordion.classList.toggle('active');
+        }
+
+        // Scroll to top functionality
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        async function onConfigChange(config) {
+            const siteTitle = config.site_title || defaultConfig.site_title;
+            const mainTitle = config.main_title || defaultConfig.main_title;
+            const mainSubtitle = config.main_subtitle || defaultConfig.main_subtitle;
+            const backgroundColor = config.background_color || defaultConfig.background_color;
+            const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+            const cardColor = config.card_color || defaultConfig.card_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const accentColor = config.accent_color || defaultConfig.accent_color;
+
+            document.getElementById('siteTitle').textContent = siteTitle;
+            document.getElementById('mainTitle').textContent = mainTitle;
+            document.getElementById('mainSubtitle').textContent = mainSubtitle;
+
+            document.body.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${secondaryColor} 100%)`;
+
+            const hero = document.querySelector('.hero');
+            hero.style.background = `linear-gradient(135deg, ${backgroundColor}e6 0%, ${secondaryColor}e6 100%)`;
+
+            const cards = document.querySelectorAll('.info-card, .accordion, .species-card');
+            cards.forEach(card => {
+                card.style.background = cardColor;
+            });
+
+            const cardTitles = document.querySelectorAll('.card-title, .species-name, .accordion-title');
+            cardTitles.forEach(title => {
+                title.style.color = secondaryColor;
+            });
+
+            const textElements = document.querySelectorAll('.card-content, .species-details, .card-list li');
+            textElements.forEach(text => {
+                text.style.color = textColor;
+            });
+
+            const scrollTopBtn = document.getElementById('scrollTop');
+            scrollTopBtn.style.background = `linear-gradient(135deg, ${backgroundColor}, ${secondaryColor})`;
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig: defaultConfig,
+                onConfigChange: onConfigChange,
+                mapToCapabilities: (config) => ({
+                    recolorables: [
+                        {
+                            get: () => config.background_color || defaultConfig.background_color,
+                            set: (value) => {
+                                config.background_color = value;
+                                window.elementSdk.setConfig({ background_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.secondary_color || defaultConfig.secondary_color,
+                            set: (value) => {
+                                config.secondary_color = value;
+                                window.elementSdk.setConfig({ secondary_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.card_color || defaultConfig.card_color,
+                            set: (value) => {
+                                config.card_color = value;
+                                window.elementSdk.setConfig({ card_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.text_color || defaultConfig.text_color,
+                            set: (value) => {
+                                config.text_color = value;
+                                window.elementSdk.setConfig({ text_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.accent_color || defaultConfig.accent_color,
+                            set: (value) => {
+                                config.accent_color = value;
+                                window.elementSdk.setConfig({ accent_color: value });
+                            }
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: undefined,
+                    fontSizeable: undefined
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ["site_title", config.site_title || defaultConfig.site_title],
+                    ["main_title", config.main_title || defaultConfig.main_title],
+                    ["main_subtitle", config.main_subtitle || defaultConfig.main_subtitle]
+                ])
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a84c840007d5928',t:'MTc2NDc4MjkyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
